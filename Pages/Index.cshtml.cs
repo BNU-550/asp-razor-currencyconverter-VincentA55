@@ -12,6 +12,8 @@ namespace RazorCurrencyConverter.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
+        public String FullName { get; set; }
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
@@ -19,6 +21,12 @@ namespace RazorCurrencyConverter.Pages
 
         public void OnGet()
         {
+
+        }
+
+        public void OnPost()
+        {
+
 
         }
     }

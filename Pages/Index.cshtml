@@ -5,6 +5,21 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">VincentA55 CO550 Email Register</h1>
+
+    <form>
+        <div class="form-group">
+            <p>
+                <label for="name">Name</label>
+                <input type="text" placeholder="Name">
+            </p>
+            <p>
+                <label for="email">Email</label>
+                <input type="email" placeholder="Enter email">
+            </p>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <p class="alert-success"> @ViewData["Message"]</p>
 </div>
