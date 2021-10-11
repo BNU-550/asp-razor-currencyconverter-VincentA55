@@ -22,7 +22,7 @@ namespace RazorCurrencyConverter.Pages
 
         public void OnGet()
         {
-           // FullName = "no name";
+          
         }
 
         public void OnPost()

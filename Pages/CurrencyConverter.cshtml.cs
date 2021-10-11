@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 
 namespace RazorCurrencyConverter.Pages
 {
@@ -11,9 +8,6 @@ namespace RazorCurrencyConverter.Pages
     {
         [BindProperty]
         public double Amount { get; set; }
-
-        [BindProperty]
-        public String Result { get; set; }
 
         public String Currency { get; set; }
 
@@ -23,11 +17,9 @@ namespace RazorCurrencyConverter.Pages
 
         public void OnPost()
         {
-            
-
             Currency = Request.Form["Currency"];
 
-            if(Currency == "Euros")
+            if (Currency == "Euros")
             {
                 Amount = Amount * 0.8;
                 ViewData["Result"] = "£" + Amount.ToString("0.00");
@@ -37,8 +29,6 @@ namespace RazorCurrencyConverter.Pages
                 Amount = Amount * 1.18;
                 ViewData["Result"] = "€" + Amount.ToString("0.00");
             }
-
-
         }
     }
 }
