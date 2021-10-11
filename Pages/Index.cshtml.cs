@@ -12,6 +12,7 @@ namespace RazorCurrencyConverter.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
+        [BindProperty]
         public String FullName { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -21,12 +22,23 @@ namespace RazorCurrencyConverter.Pages
 
         public void OnGet()
         {
-
+            FullName = "no name";
         }
 
         public void OnPost()
         {
+            this.FullName = Request.Form["name"];
 
+            if (String.IsNullOrEmpty(FullName))
+            {
+                ViewData["Message"] = " ";
+            }
+            else
+            {
+                ViewData["Message"] = FullName + " registered successfully!";
+            }
+
+            
 
         }
     }
