@@ -11,15 +11,15 @@
     <form method="post">
         Convert :
 
+        <input type="number" asp-for="@Model.Amount" name ="Amount" />
         
-        <input type="text" placeholder="Amount" asp-for="@Model.Amount" value="@Model.Amount.ToString("0.00")" />
 
         <select asp-for="@Model.Currency">
             <option value="Euros">Euros</option>
             <option value="Pounds">Pounds</option>
         </select>
 
-        <p> @ViewData["Results"]</p>
+        <p> @ViewData["Result"] </p>
       
         <p>
             <button class=" btn btn-success" input type="submit">Calculate</button>

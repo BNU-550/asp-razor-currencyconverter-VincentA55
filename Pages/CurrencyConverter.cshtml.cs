@@ -9,9 +9,11 @@ namespace RazorCurrencyConverter.Pages
 {
     public class CurrencyConverterModel : PageModel
     {
-        public int Amount { get; set; }
+        [BindProperty]
+        public double Amount { get; set; }
 
-        public int Result;
+        [BindProperty]
+        public String Result { get; set; }
 
         public String Currency { get; set; }
 
@@ -21,13 +23,19 @@ namespace RazorCurrencyConverter.Pages
 
         public void OnPost()
         {
-           // Amount = Request.Form["Amount"];
+            
 
             Currency = Request.Form["Currency"];
 
             if(Currency == "Euros")
             {
-
+                Amount = Amount * 0.8;
+                ViewData["Result"] = "£" + Amount.ToString("0.00");
+            }
+            else if (Currency == "Pounds")
+            {
+                Amount = Amount * 1.18;
+                ViewData["Result"] = "€" + Amount.ToString("0.00");
             }
 
 
