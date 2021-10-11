@@ -7,11 +7,16 @@
 <div class="text-center">
     <h1 class="display-4">VincentA55 CO550 Email Register</h1>
 
+    <div>
+        <a class="nav-link" asp-area="" asp-page="/CurrencyConverter">CurrencyConverter</a>
+    </div>
+
     <form method="post" class="mx-auto">
         <div class="form-group">
             <p>
-                <label for="name">Name</label>
-                <input asp-for="FullName"  type="text" name="name">
+                <label for="validationDefault01">Name</label>
+                <input type="text" class="form-control" id="validationDefault01" placeholder="Name" required>
+                <input asp-for="FullName" type="text" name="name">
             </p>
             <p>
                 <label for="email">Email</label>
