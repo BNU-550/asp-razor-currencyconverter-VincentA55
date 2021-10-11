@@ -7,11 +7,11 @@
 <div class="text-center">
     <h1 class="display-4">VincentA55 CO550 Email Register</h1>
 
-    <form class="mx-auto">
+    <form method="post" class="mx-auto">
         <div class="form-group">
             <p>
                 <label for="name">Name</label>
-                <input type="text" name="name">
+                <input asp-for="FullName"  type="text" name="name">
             </p>
             <p>
                 <label for="email">Email</label>
@@ -21,5 +21,5 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <p class="alert-success"> @ViewData["Message"]  @Model.FullName</p>
+    <p class="alert-success"> @ViewData["Message"]</p>
 </div>
